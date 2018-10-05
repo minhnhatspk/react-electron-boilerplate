@@ -1,17 +1,29 @@
 {
-  "name": "react-demo",
+  "name": "react-electron-boilerplate",
   "version": "0.1.0",
   "private": true,
+  "main": "src/init.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "dev": "concurrently --kill-others-on-fail \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "electron-squirrel-startup": "^1.0.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-scripts": "2.0.4"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "concurrently": "^4.0.1",
+    "cross-env": "^5.2.0",
+    "electron": "^3.0.2",
+    "electron-compile": "^6.4.3",
+    "electron-prebuilt-compile": "^3.0.0",
+    "wait-on": "^3.1.0"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -21,8 +33,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "devDependencies": {
-    "electron": "^3.0.2"
-  }
+  ]
 }
