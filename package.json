@@ -11,14 +11,19 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "electron-is-dev": "^1.0.1",
     "electron-squirrel-startup": "^1.0.0",
     "node-sass": "^4.9.3",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.0.4"
+    "react-scripts": "2.0.4",
+    "redux": "^4.0.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "concurrently": "^4.0.1",
