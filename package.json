@@ -7,7 +7,7 @@
     "start": "react-scripts start",
     "dev": "concurrently --kill-others-on-fail \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --verbose --watchAll=false",
     "eject": "react-scripts eject"
   },
   "dependencies": {

@@ -1,7 +1,7 @@
 import { app, BrowserWindow } from 'electron';
 import installExtension, { REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS } from 'electron-devtools-installer';
 import isDev from 'electron-is-dev';
-
+import { InitEvents } from './electron/EventManger';
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
   app.quit();
@@ -32,6 +32,7 @@ const createWindow = () => {
     mainWindow = null;
   });
 
+  InitEvents(mainWindow);
   if (isDev) {
     installExtension([REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS]);
     mainWindow.webContents.openDevTools();

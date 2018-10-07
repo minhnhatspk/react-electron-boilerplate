@@ -3,7 +3,18 @@ import { func, array } from 'prop-types';
 import logo from '../../assets/logo.svg';
 import './Home.scss';
 
+const { ipcRenderer } = window.require('electron');
+
 class Home extends Component {
+
+  componentWillReceiveProps(nextProps) {
+    const { users } = nextProps;
+    console.log(nextProps);
+    if(!!users[0]) {
+      ipcRenderer.send('onUserLoaded', users);
+    }
+  }
+
   componentDidMount() {
     const { getUsers } = this.props;
     getUsers();
