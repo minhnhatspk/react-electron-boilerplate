@@ -18,7 +18,7 @@ export const getData = () => (
     return axios.get('https://reqres.in/api/users?page=2')
       .then((res) => {
         console.log(res)
-        dispatch(getDataSuccess(res.data));
+        dispatch(getDataSuccess(res.data.data));
       })
       .catch(error => {
         console.log(error);
