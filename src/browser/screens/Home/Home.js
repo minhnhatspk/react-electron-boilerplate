@@ -6,11 +6,9 @@ import './Home.scss';
 const { ipcRenderer } = window.require('electron');
 
 class Home extends Component {
-
   componentWillReceiveProps(nextProps) {
     const { users } = nextProps;
-    console.log(nextProps);
-    if(!!users[0]) {
+    if (!!users[0]) {
       ipcRenderer.send('onUserLoaded', users);
     }
   }
@@ -35,8 +33,8 @@ class Home extends Component {
               users.map(user => (
                 <div key={user.id}>
                   <p>name {user.first_name}</p>
-                  <img src={user.avatar} alt={`${user.avatar}`}/>
-                  <button onClick={() =>this.deleteUser(user.id)}>Delete</button>
+                  <img src={user.avatar} alt={`${user.avatar}`} />
+                  <button onClick={() => this.deleteUser(user.id)}>Delete</button>
                 </div>
               ))
             }
