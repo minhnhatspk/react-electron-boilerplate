@@ -1,4 +1,4 @@
-import { app, ipcMain, dialog, Tray, Menu } from 'electron';
+import { ipcMain } from 'electron';
 
 const UserEvents = () => {
   ipcMain.on('onUserLoaded', (event, users) => {
