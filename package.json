@@ -8,6 +8,7 @@
   "contributors": [
     "miZyind <mizyind@gmail.com>"
   ],
+  "license": "MIT",
   "scripts": {
     "start": "react-scripts start",
     "dev": "concurrently --kill-others-on-fail \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
