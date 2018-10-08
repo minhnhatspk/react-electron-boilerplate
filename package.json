@@ -1,14 +1,18 @@
 {
   "name": "react-electron-boilerplate",
   "version": "0.1.0",
-  "private": true,
+  "description": "A boilerplate for creating project that based on Electron and React.js",
+  "repository": "git@github.com:minhnhatspk/react-electron-boilerplate.git",
   "main": "src/init.js",
+  "author": "Nhat Hoang Minh Pham <nhathoangminhpham@gmail.com>",
+  "contributors": [
+    "miZyind <mizyind@gmail.com>"
+  ],
   "scripts": {
     "start": "react-scripts start",
     "dev": "concurrently --kill-others-on-fail \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
     "build": "react-scripts build",
-    "test": "react-scripts test --verbose --watchAll=false",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --verbose --watchAll=false"
   },
   "dependencies": {
     "axios": "^0.18.0",
