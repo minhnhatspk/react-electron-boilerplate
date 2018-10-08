@@ -20,7 +20,7 @@ class Home extends Component {
     getUsers();
   }
 
-  deleteUser =  (userId) => () => {
+  deleteUser(userId) {
     // Do somehthing
   }
 
@@ -36,7 +36,7 @@ class Home extends Component {
                 <div key={user.id}>
                   <p>name {user.first_name}</p>
                   <img src={user.avatar} alt={`${user.avatar}`}/>
-                  <button onClick={this.deleteUser(user.id)}>Delete</button>
+                  <button onClick={() =>this.deleteUser(user.id)}>Delete</button>
                 </div>
               ))
             }
