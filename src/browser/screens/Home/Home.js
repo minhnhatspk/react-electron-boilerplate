@@ -19,6 +19,11 @@ class Home extends Component {
     const { getUsers } = this.props;
     getUsers();
   }
+
+  deleteUser =  (userId) => () => {
+    // Do somehthing
+  }
+
   render() {
     const { users } = this.props;
     return (
@@ -31,6 +36,7 @@ class Home extends Component {
                 <div key={user.id}>
                   <p>name {user.first_name}</p>
                   <img src={user.avatar} alt={`${user.avatar}`}/>
+                  <button onClick={this.deleteUser(user.id)}>Delete</button>
                 </div>
               ))
             }
