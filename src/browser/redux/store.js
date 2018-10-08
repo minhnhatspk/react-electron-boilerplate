@@ -1,14 +1,10 @@
-import { createStore, applyMiddleware } from 'redux';
-import logger from 'redux-logger';
+import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import reducers from './reducers';
 
-const middleWare = [];
-middleWare.push(thunk);
+// https://medium.com/@zalmoxis/using-redux-devtools-in-production-4c5b56c5600f
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-if(process.env.NODE_ENV === 'development') {
-  middleWare.push(logger);
-}
+const middleware = [thunk];
 
-export default createStore(reducers, applyMiddleware(...middleWare));
-
+export default createStore(reducers, composeEnhancers(applyMiddleware(...middleware)));
