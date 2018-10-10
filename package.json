@@ -52,5 +52,15 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
+  ],
+  "keywords": [
+    "react",
+    "electron",
+    "boilerplate",
+    "redux",
+    "sass",
+    "reload",
+    "enzyme",
+    "jest"
   ]
 }
